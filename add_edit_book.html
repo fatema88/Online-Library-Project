@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit book</title>
+</head>
+<body>
+    <nav>
+        <h1>Book Corner</h1>
+        <a href="home.html">Home</a> |
+        <a href="add_edit_book.html">Add Book</a> |
+        <a href="manage_books.html">Manage Books</a> |
+        <a href="login.html">Logout</a>
+    </nav>
+    <hr>
+
+    <h2>Add / Edit Book</h2>
+
+    <form action="" method="post">
+
+        <label for="bookName">Book Name:</label>
+        <input type="text" id="bookName" for="bookName" required>
+        <br><br>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+        <br><br>
+
+        <label for="category">Category: </label>
+        <select id="category" name="Category">
+            <option></option>
+            <option>Fiction</option>
+            <option>History</option>
+            <option>Science</option>
+            <option>Technology</option>
+        </select>
+        <br><br>
+
+        <label for="bookID">Book ID:</label>
+        <input type="number" id="bookID" name="bookId" required>
+        <br><br>
+
+
+
+        <label for="description">Description:</label>
+        <br>
+        <textarea id="description" name="description" rows="9" cols="40"></textarea>
+        <br><br>
+
+        <button type="submit">Save Book</button>
+        <button type="reset">Clear Form</button>
+
+
+    </form>
+
+    
+</body>
+</html>
