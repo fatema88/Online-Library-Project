@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library · Sign Up</title>
+</head>
+<body>
+    <header>
+        <h1>📖 Online Library · Sign Up</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="books.html">Browse Books</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Create a new account</h2>
+
+        <form action="#" method="post">
+            <p>
+                <label for="username">Username <span>*</span></label><br>
+                <input type="text" id="username" name="username" required>
+            </p>
+
+            <p>
+                <label for="email">Email address</label><br>
+                <input type="email" id="email" name="email">
+            </p>
+
+            <p>
+                <label for="password">Password <span>*</span></label><br>
+                <input type="password" id="password" name="password" required>
+            </p>
+
+            <p>
+                <label for="confirm-password">Confirm password <span>*</span></label><br>
+                <input type="password" id="confirm-password" name="confirm_password" required>
+            </p>
+
+            <fieldset>
+                <legend>Account type</legend>
+                <p>
+                    <input type="radio" id="role-admin" name="role" value="admin">
+                    <label for="role-admin">Admin</label>
+                </p>
+                <p>
+                    <input type="radio" id="role-user" name="role" value="user" checked>
+                    <label for="role-user">User</label>
+                </p>
+            </fieldset>
+
+            <p>
+                <button type="submit">Sign up</button>
+            </p>
+        </form>
+
+        <p>Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+
+    <footer>
+        <hr>
+        <p>© 2025 Online Library · member #1</p>
+    </footer>
+</body>
+</html>
