@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Books | Online Library</title> <!-- edit "Online Library" to whatever the website name is (BookON is suggested :) BookON = Online Book)-->
+</head>
+<body>
+    
+    <header>
+        <h1>Online Library: Admin Side</h1>
+    </header>
+    <hr>
+
+    <!-- "href" shall be edited depending on the Names of the Pages -->
+    <nav>
+        <a href="home.html">Home</a>  |
+        <a href="add_edit_book.html">Add-Edit Book</a>  |
+        <a href="login.html">Logout</a>
+    </nav>
+
+    <hr>
+
+    <section>
+        <h2>Manage Books</h2>
+
+        <table border="3" cellpadding="5">
+        <caption><b>Library Books List</b></caption>
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <!-- ------------------------------------------------------------ -->
+
+            <tbody>
+                <!-- Test Books: -->
+                <tr>
+                    <td>101</td>
+                    <td>First Test Book</td>
+                    <td>Youssif (Me :))</td>
+                    <td>Testing</td>
+                    <td>
+                        <a href="add_edit_book.html">Edit</a> | 
+                        <a href="delete_confirm.html">Delete</a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>102</td>
+                    <td>Clean Code</td>
+                    <td>Robert C. Martin</td>
+                    <td>Technology</td>
+                    <td>
+                        <a href="add_edit_book.html">Edit</a> | 
+                        <a href="delete_confirm.html">Delete</a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>103</td>
+                    <td>A Brief History of Time</td>
+                    <td>Stephen Hawking</td>
+                    <td>Science</td>
+                    <td>
+                        <a href="add_edit_book.html">Edit</a> | 
+                        <a href="delete_confirm.html">Delete</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>104</td>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>Fiction</td>
+                    <td>
+                        <a href="add_edit_book.html">Edit</a> | 
+                        <a href="delete_confirm.html">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
