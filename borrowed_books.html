@@ -4,6 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Borrowed Books</title>
+<link rel="stylesheet" href="borrowed_books.css">
+<script src="borrowed_books.js"></script>
 </head>
 
 <body>
@@ -29,39 +31,33 @@
 
 <h2>My Borrowed Books</h2>
 
-<table border="1">
+<div class="books-container">
 
-<thead>
-<tr>
-<th>Book Name</th>
-<th>Author</th>
-<th>Borrow Date</th>
-</tr>
-</thead>
+    <div class="book-card">
+        <h3>Harry Potter</h3>
+        <p><strong>Author:</strong> J.K. Rowling</p>
+        <p><strong>Borrowed:</strong> 3 March 2026</p>
+        <p><strong>Return:</strong> 3 April 2026</p>
+        <button class="return-btn">Return</button>
+    </div>
 
-<tbody>
+    <div class="book-card">
+        <h3>The Alchemist</h3>
+        <p><strong>Author:</strong> Paulo Coelho</p>
+        <p><strong>Borrowed:</strong> 5 March 2026</p>
+        <p><strong>Return:</strong> 5 April 2026</p>
+        <button class="return-btn">Return</button>
+    </div>
 
-<tr>
-<td>Harry Potter</td>
-<td>J.K. Rowling</td>
-<td>3 March 2026</td>
-</tr>
+    <div class="book-card">
+        <h3>The Little Prince</h3>
+        <p><strong>Author:</strong> Antoine de Saint-Exupéry</p>
+        <p><strong>Borrowed:</strong> 20 February 2026</p>
+        <p><strong>Return:</strong> 25 February 2026</p>
+        <button class="return-btn">Return</button>
+    </div>
 
-<tr>
-<td>The Alchemist</td>
-<td>Paulo Coelho</td>
-<td>5 March 2026</td>
-</tr>
-
-<tr>
-<td>The Little Prince</td>
-<td>Antoine de Saint-Exupéry</td>
-<td>20 February 2026</td>
-</tr>
-
-</tbody>
-
-</table>
+</div>
 
 </section>
 
