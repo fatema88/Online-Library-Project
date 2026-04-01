@@ -4,12 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Search Books</title>
+<link rel="stylesheet" href="search.css">
+<script src="search.js"></script>
 </head>
 
 <body>
 
     <header>
-        <table width="100%" border="0">
+        <table width="100%" border= none>
         <tr>
             <td align="left"><h1> <sup>Book Corner</sup> </h1></td>
         <td align="right">
@@ -27,34 +29,33 @@
 
 <h2>Search for a Book</h2>
 
-<form>
+<form id="searchForm" action="search.html" method="get">
+    <label>Search by Title:</label>
+    <input type="text" name="title">
 
-<label>Search by Title:</label>
-<input type="text">
+    <br><br>
 
-<br><br>
+    <label>Search by Author:</label>
+    <input type="text" name="author">
 
-<label>Search by Author:</label>
-<input type="text">
+    <br><br>
 
-<br><br>
+    <label>Search by Category:</label>
+    <select name="category">
+        <option>Choose Category</option>
+        <option>History</option>
+        <option>Science</option>
+        <option>Self-Help</option>
+        <option>Philosophy</option>
+    </select>
 
-<label>Search by Category:</label>
+    <br><br>
 
-<select>
-<option>Choose Category</option>
-<option>Fiction</option>
-<option>Science</option>
-<option>History</option>
-<option>Technology</option>
-</select>
-
-<br><br>
-
-<button type="submit">Search</button>
-
+    <button type="submit">Search</button>
 </form>
 
+<div id="searchResultContainer"></div> 
+</section>
 </section>
 
 <section>
@@ -142,6 +143,82 @@
 <td>Dan Brown</td>
 <td>Fiction</td>
 <td>Available</td>
+</tr>
+<tr>
+    <td>Sapiens: A Brief History of Humankind</td>
+    <td>Yuval Noah Harari</td>
+    <td>History</td>
+    <td>Available</td>
+</tr>
+
+<tr>
+    <td>A Tale of Two Cities</td>
+    <td>Charles Dickens</td>
+    <td>History</td>
+    <td>Not Available</td>
+</tr>
+
+<tr>
+    <td>Guns, Germs, and Steel</td>
+    <td>Jared Diamond</td>
+    <td>History</td>
+    <td>Available</td>
+</tr>
+
+<tr>
+    <td>The Diary of Anne Frank</td>
+    <td>Anne Frank</td>
+    <td>History</td>
+    <td>Available</td>
+</tr>
+
+<tr>
+    <td>A Brief History of Time</td>
+    <td>Stephen Hawking</td>
+    <td>Science</td>
+    <td>Available</td>
+</tr>
+
+<tr>
+    <td>The Selfish Gene</td>
+    <td>Richard Dawkins</td>
+    <td>Science</td>
+    <td>Not Available</td>
+</tr>
+
+<tr>
+    <td>Cosmos</td>
+    <td>Carl Sagan</td>
+    <td>Science</td>
+    <td>Available</td>
+</tr>
+
+<tr>
+    <td>Thinking, Fast and Slow</td>
+    <td>Daniel Kahneman</td>
+    <td>Science</td>
+    <td>Available</td>
+</tr>
+
+<tr>
+    <td>Man’s Search for Meaning</td>
+    <td>Viktor Frankl</td>
+    <td>Self-Help</td>
+    <td>Available</td>
+</tr>
+
+<tr>
+    <td>Meditations</td>
+    <td>Marcus Aurelius</td>
+    <td>Philosophy</td>
+    <td>Not Available</td>
+</tr>
+
+<tr>
+    <td>Atomic Habits</td>
+    <td>James Clear</td>
+    <td>Self-Help</td>
+    <td>Available</td>
 </tr>
 
 </tbody>
