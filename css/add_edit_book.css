@@ -185,7 +185,7 @@ option::checkmark {
     padding: 15px;
     color: white;
     font-size: 14px;
-    background-color: hsl(169, 82%, 27%);
+    background-color: #663399;
 }
 
 .btn-clear {
@@ -196,11 +196,12 @@ option::checkmark {
     padding: 15px;
     color: white;
     font-size: 14px;
-    background-color: hsl(350, 60%, 50%);
+        background-color: #ddd;
+    color: #333;
 }
 
 .btn-save:hover {
-    background-color: hsl(169, 84%, 17%);
+    background-color:#311358;
     cursor: pointer;
 }
 
