@@ -4,72 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="homesignup.css">
 </head>
 <body>
-    <header>
-        <table width="100%" border="0">
-            <tr>
-                <td align="left">
-                    <h1> <sup>Book Corner</sup> </h1>
-                </td>
-                <td  align="right">
-                    <nav>
-                    <pre><a href="home.html"><font size="5">Home</font></a>          <a href="signup.html"><font size="5">Sign up</font></a>          <a href="login.html"><font size="5">Log in</font></a>                                                           
-                    </pre> 
-                    </nav>
-                    <hr>
-                </td>
-            </tr>
-        </table>
-    </header>
 
-    <section>
-        <h2>Create a new account</h2>
+<header class="navbar">
+    <h1 class="logo">Book Corner</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="signup.html">Sign up</a>
+        <a href="#">Log in</a>
+    </nav>
+</header>
 
-        <form action="#" method="post">
-            <p>
-                <label for="username">Username <span>*</span></label><br>
-                <input type="text" id="username" name="username" required>
-            </p>
+<section class="form-section">
+    <div class="form-card">
+        <h2>Create Account</h2>
 
-            <p>
-                <label for="email">Email address</label><br>
-                <input type="email" id="email" name="email">
-            </p>
+        <form id="signupForm">
+            <label>Username *</label>
+            <input type="text" required>
 
-            <p>
-                <label for="password">Password <span>*</span></label><br>
-                <input type="password" id="password" name="password" required>
-            </p>
+            <label>Email</label>
+            <input type="email">
 
-            <p>
-                <label for="confirm-password">Confirm password <span>*</span></label><br>
-                <input type="password" id="confirm-password" name="confirm_password" required>
-            </p>
+            <label>Password *</label>
+            <input type="password" required>
 
-            <fieldset>
-                <legend>Account type</legend>
-                <p>
-                    <input type="radio" id="role-admin" name="role" value="admin">
-                    <label for="role-admin">Admin</label>
-                </p>
-                <p>
-                    <input type="radio" id="role-user" name="role" value="user" checked>
-                    <label for="role-user">User</label>
-                </p>
-            </fieldset>
+            <label>Confirm Password *</label>
+            <input type="password" required>
 
-            <p>
-                <button type="submit">Sign up</button>
-            </p>
+            <div class="radio-group">
+                <p>Account Type</p>
+                <label><input type="radio" name="role" value="user" checked> User</label>
+                <label><input type="radio" name="role" value="admin"> Admin</label>
+            </div>
+
+            <button type="submit">Sign Up</button>
         </form>
 
-        <p>Already have an account? <a href="login.html">Log in</a></p>
-    </section>
+        <p class="login-link">
+            Already have an account? <a href="#">Log in</a>
+        </p>
+    </div>
+</section>
 
-    <footer>
-        <hr>
-        <p>© 2026 Book Corner </p>
-    </footer>
+<footer>
+    <p>© 2026 Book Corner</p>
+</footer>
+
+<script src="signup.js"></script>
+
 </body>
 </html>
