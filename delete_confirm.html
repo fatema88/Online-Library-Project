@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Book</title>
+    <link rel="stylesheet" href="delete_confirm.css">
+    <script src="delete_confirm.js"></script>
 </head>
 <body>
     
@@ -26,14 +28,18 @@
     
     <section>
         <h2>Delete Confirmation</h2>
-    
+        
+        <div id="bookDetailsDiv"></div>
+        
         <p>Are you sure you want to delete this book?</p>
-        <a href="manage_books.html">Yes,Delete</a>
-        <br>
-        <a href="manage_books.html">Go Back</a>
+        
+        <div class="button-container">
+            <button id="confirmDeleteBtn" class="confirm-btn">Yes, Delete</button>
+            <button id="cancelBtn" class="cancel-btn">Cancel</button>
+        </div>
     </section>
 
-         <br>
+        <br>
     <footer >
     <hr>
         <p>© 2026 Book Corner </p>
