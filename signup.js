@@ -6,6 +6,6 @@ document.getElementById("signupForm").addEventListener("submit", function(e) {
     if (role === "admin") {
         window.location.href = "add_edit_book.html";
     } else {
-        window.location.href = "manage_books.html";
+        window.location.href = "books.html";
     }
 });
