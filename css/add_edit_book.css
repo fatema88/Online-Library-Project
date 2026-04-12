@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: "Trirong", serif; */
+}
+
+body {
+    background-color: #f2ebfb;
+    color: hsl(263, 25%, 14%);
+}
+
+nav {
+    background-color: #311358;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    height: 70px;
+}
+
+.logo {
+    margin-right: auto;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.navLinks {
+    margin-left: 0 100px;
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.navLinks li a {
+    text-decoration: none;
+    color: #f2ebfb;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 5px;
+    border-radius: 6px;
+}
+
+.navLinks li a:hover {
+    background-color: #430e75;
+    color: white;
+}
+
+.navLinks li a.active {
+    background-color: #490f80;
+    color: #bfa3ef;
+}
+
+.navLinks li a.logout {
+    color: hsl(0, 56%, 69%);
+}
+
+.navLinks li a.logout:hover {
+    background-color: #451f33;
+    color: hsl(0, 56%, 82%);
+}
+
+main {
+    padding: 20px 50px 50px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: hsl(200, 25%, 14%);
+}
+
+.form-card {
+    background-color: white;
+    border: 1px solid hsl(274, 82%, 27%);
+    border-radius: 16px;
+    padding: 40px;
+
+}
+
+.form-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(274, 82%, 15%);
+}
+
+
+input,
+textarea {
+    margin-bottom: 5px;
+    padding: 8px;
+    border: 1px solid hsl(258, 18%, 74%);
+    border-radius: 6px;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+    background: hsl(270, 14%, 95%);
+    outline: none;
+}
+
+select {
+    appearance: base-select;
+    border: 1px solid hsl(258, 18%, 74%);
+    background: white;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 0;
+    outline: none;
+}
+
+select:hover,
+select:focus {
+    background: hsl(270, 14%, 95%);
+}
+
+option {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    border: 1px solid hsl(258, 18%, 74%);
+    background: white;
+    padding: 10px;
+}
+
+option:first-of-type {
+    border-radius: 8px 8px 0 0;
+}
+
+option:last-of-type {
+    border-radius: 0 0 8px 8px;
+}
+
+option:not(option:last-of-type) {
+    border-bottom: none;
+}
+
+option:hover,
+option:focus {
+    background: #b6a0dd;
+}
+
+option::checkmark {
+    order: 1;
+    margin-left: auto;
+    content: "✅";
+}
+
+::picker(select) {
+    appearance: base-select;
+    border: none;
+    border-radius: 8px;
+    top: calc(anchor(bottom) + 1px);
+    left: anchor(10%);
+}
+
+.btn-save {
+    margin-top: 15px;
+    margin-right: 15px;
+    width: 70%;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    background-color: hsl(169, 82%, 27%);
+}
+
+.btn-clear {
+    margin-top: 15px;
+    width: 25%;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    background-color: hsl(350, 60%, 50%);
+}
+
+.btn-save:hover {
+    background-color: hsl(169, 84%, 17%);
+    cursor: pointer;
+}
+
+.btn-clear:hover {
+    background-color: hsl(350, 58%, 40%);
+    cursor: pointer;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: start;
+    gap: 40px;
+    width: 100%;
+}
+
+.image {
+    align-self: center;
+    margin-left: 50px;
+
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+    align-self: center;
+    opacity: 60%;
+}
+
+footer {
+    padding: 20px 48px;
+    border-top: 1px solid hsl(170, 30%, 61%);
+    text-align: center;
+    font-size: 13px;
+    color: hsl(170, 23%, 31%);
+}
