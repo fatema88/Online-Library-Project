@@ -1,71 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add/Edit book</title>
+    <title>Book Corner - Add Book</title>
+    <link rel="stylesheet" href="css/add_edit_book.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong"> -->
+
 </head>
+
 <body>
-    <header>
-        <table width="100%" border="0">
-            <tr>
-                <td align="left">
-                    <h1> <sup>Book Corner</sup> </h1>
-                </td>
-                <td align="right">
-                    <nav>
-                        <pre><a  href="home.html"><font size="5">Home</font></a>     <a href="add_edit_book.html"><font size="5">Add Book</font></a>     <a href="manage_books.html"><font size="5">Manage Books</font></a>     <a href="login.html"><font size="5">Logout</font></a>                                                    
-                        </pre>
-                    </nav>
-                    <hr>
-                </td>
-            </tr>
-        </table>
-    </header>
 
-    <h2>Add / Edit Book</h2>
+    <nav>
+        <div class="logo">
+            <h1> Book Corner </h1>
+        </div>
+        <ul class="navLinks">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="add_edit_book.html" class="active">Add Book</a></li>
+            <li><a href="manage_books.html">Manage Books</a></li>
+            <li><a href="login.html" class="logout">Logout</a></li>
+        </ul>
+    </nav>
 
-    <form action="" method="post">
+    <main>
+        <div class="header">
+            <h2 class="Title">Add Book</h2>
+        </div>
+        <div class="content">
+            <div class="form-card">
+                <form action="" method="post">
+                    <div class="form-cards">
 
-        <label for="bookName">Book Name:</label>
-        <input type="text" id="bookName" for="bookName" required>
-        <br><br>
+                        <div class="field">
+                            <label for="bookName">Book Name:</label>
+                            <input type="text" id="bookName" name="bookName" required>
+                        </div>
 
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required>
-        <br><br>
+                        <div class="field">
+                            <label for="author">Author:</label>
+                            <input type="text" id="author" name="author" required>
+                        </div>
 
-        <label for="category">Category: </label>
-        <select id="category" name="Category">
-            <option></option>
-            <option>Fiction</option>
-            <option>History</option>
-            <option>Science</option>
-            <option>Technology</option>
-        </select>
-        <br><br>
+                        <div class="field">
+                            <label for="category">Category: </label>
+                            <div class="C-select"></div>
+                            <select id="category" name="category">
+                                <option value="">Select a category</option>
+                                <option>Fiction</option>
+                                <option>History</option>
+                                <option>Science</option>
+                                <option>Technology</option>
+                            </select>
+                        </div>
+                    </div>
 
-        <label for="bookID">Book ID:</label>
-        <input type="number" id="bookID" name="bookId" required>
-        <br><br>
+                    <div class="field">
+                        <label for="bookID">Book ID:</label>
+                        <input type="number" id="bookID" name="bookId" required>
+                    </div>
 
-
-
-        <label for="description">Description:</label>
-        <br>
-        <textarea id="description" name="description" rows="9" cols="40"></textarea>
-        <br><br>
-
-        <button type="submit">Save Book</button>
-        <button type="reset">Clear Form</button>
-
-
-    </form>
-
-         <br>
-    <footer >
-    <hr>
+                    <div class="field full">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" rows="6" cols="40"></textarea>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-save" type="submit">Save Book</button>
+                        <button class="btn-clear" type="button" id="clearBtn">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+            <div class="image">
+                <img src="images/book1.png">
+            </div>
+        </div>
+    </main>
+    <footer>
         <p>© 2026 Book Corner </p>
     </footer>
+    <script src="js/add_edit_book.js"></script>
 </body>
+
 </html>
