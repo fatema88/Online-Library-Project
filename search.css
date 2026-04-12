@@ -1,21 +1,41 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #CBC3E3;
+    background-color: #f2ebfb;
+;
+    display: block;
+
 }
 
-header {
-    background-color: #800080;
-    color: white;
-    padding: 10px;
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    background:#311358;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 99;
+    
+    
 }
-
-header a {
-    color: white;
-    text-decoration: none;
+.logo{
+   
+    color: aliceblue;
+    user-select: none;
+    font-family:serif;
 }
-
-header a:hover {
+.nav a{
+    color: aliceblue;
+    position: relative;
+    font-size:1.1em;
+    /* margin-left: 10px; */
+    margin-right: 70px;
+    text-decoration:none;
+}
+.nav a:hover{
     text-decoration: underline;
 }
 
@@ -25,6 +45,7 @@ section {
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 90px;
 }
 
 h2 {
@@ -43,7 +64,7 @@ input, select, button {
 
 button {
     width: 100px;
-    background-color: #800080;
+    background-color: #663399;
     color: white;
     border: none;
     cursor: pointer;

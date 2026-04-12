@@ -5,62 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
 
+
     <header>
-        <table width="100%" border="0">
-            <tr>
-                <td align="left">
-                    <h1> <sup>Book Corner</sup> </h1>
-                </td>
-                <td  align="right">
-                    <nav>
-                    <pre><a href="home.html"><font size="5">Home</font></a>          <a href="signup.html"><font size="5">Sign up</font></a>          <a href="login.html"><font size="5">Log in</font></a>                                                           
-                    </pre> 
-                    </nav>
-                    <hr>
-                </td>
-            </tr>
-        </table>
+        <h1 class="logo">Book Corner</h1>
+        <nav class="nav">
+            <a href="home.html">Home</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Log In</a>
+        </nav>
+
     </header>
 
-    <h1 align="center">Login</h1>
 
-    <p align="center">
-        please enter your username and password to access the library 
-    </p>
-
-    <form method ="post ">
-
-        <div align="center">
-            <label for="name">username</label>
-            <input type ="text" id="name" name ="name" placeholder="enter you username"required >
+<div class="login">
+    <div class="form-box">
+        <h2>Login</h2>
+        <form action="books.html"
+        id="loginForm">
+            <div class="input-box">
+            <label for="name">Email</label>
+            <input type ="Email" id="email" name ="email" placeholder="enter your email"required >
         </div>
 
-        <br>
 
-        <div align ="center">
+        <div class="input-box">
             <label for ="pass">password</label>
-            <input type="password" id="pass" name ="pass" maxlength="10" placeholder="enter your password" required>
+            <input type="password" id="pass" name ="pass" minlength="7" maxlength="10"" placeholder="enter your password" required>
         </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember me</label>
+            <a href="signup.html">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <div class="account">
+            <p>Don't have an account?<a href="signup.html" class="link">Sign up</a></p>
+        </div>
+        </form>
+    </div>
+</div>
 
-        <p align="center">
-            If you don't have an account please 
-            <a href="signup.html">Sign up</a> 
-        </p>
 
-        <div align="center">
-            <input type="submit">
-            <input type="reset">
-        </div> 
 
-    </form>
-        <br>
-        <footer >
-        <hr>
-        <p>© 2026 Book Corner </p>
-    </footer>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Book Corner. All rights reserved.</p>
+    </div>
+</footer>
+        
+
+
+
+    ,<script>
+const loginForm = document.getElementById("loginForm");
+        
+        loginForm.addEventListener("submit", function(e) {
+            e.preventDefault();  
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("pass").value; 
+            if(email && password) {
+                alert("Welcome back!");
+                window.location.href = "home.html"; 
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,29 +1,48 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #CBC3E3;
+    background-color: #f2ebfb;
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #800080;
-    color: white;
-    padding: 10px;
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    background:#311358;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 99;
+    
+    
+    
 }
-
-header a {
-    color: white;
-    text-decoration: none;
+.logo{
+   
+    color: aliceblue;
+    user-select: none;
+    font-family:serif;
 }
-
-header a:hover {
+.nav a{
+    color: aliceblue;
+    position: relative;
+    font-size:1.1em;
+    /* margin-left: 10px; */
+    margin-right: 70px;
+    text-decoration:none;
+}
+.nav a:hover{
     text-decoration: underline;
 }
 
 h2 {
     text-align: center;
-    margin-top: 30px;
-    color: #800080;
+    margin-top: 40px;
+    color:black;
+    margin-top: 120px;
 }
 
 .books-container {
@@ -46,7 +65,7 @@ h2 {
 }
 
 .return-btn {
-    background-color: #800080;
+    background-color: #663399;
     color: white;
     border: none;
     padding: 10px;

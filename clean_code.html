@@ -1,57 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<meta charset="UTF-8">
 <title>Clean Code</title>
+
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <header>
-        <table width="100%" border="0">
-        <tr>
-            <td align="left"><h1> <sup>Book Corner</sup> </h1></td>
-        <td align="right">
-            <nav >
-            <pre><a  href="home.html"><font size="5">Home</font></a>     <a href="books.html"><font size="5">Books</font></a>     <a href="search.html"><font size="5">Search</font></a>     <a href="borrowed_books.html"><font size="5">Borrowed Books</font></a>     <a href="login.html"><font size="5">Log out</font></a>                                        
-            </pre>
+        <h1 class="logo">Book Corner</h1>
+        <nav class="nav">
+            <a href="home.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="search.html">Search</a>
+            <a href="borrowed_books.html">Borrowed Books</a>
+            <a href="login.html">Logout</a>
         </nav>
-        <hr>
-        </td>
-        </tr>
-    </table>    
+
     </header>
-<h2>Book Details</h2>
+<div class="book">
+<p><b>Book Name:</b> Clean Code</p>
+<p><b>Author:</b> Robert Martin</p>
+<p><b>Category:</b> Technology</p>
+<p><b>Description:</b> This book explains clean code.</p>
+<p><b>Status:</b> Available</p>
 
-<h3>Book Name</h3>
-<p>Clean Code</p>
-
-<h3>Author</h3>
-<p>Robert Martin</p>
-
-<h3>Category</h3>
-<p>Technology</p>
-
-<h3>Description</h3>
-<p>This book explains how to write clean and maintainable code.</p>
-
-<h3>Status</h3>
-<p>Available</p>
-
-<button>Borrow Book</button>
+<button onclick="borrowBook('Clean Code')">Borrow Book</button>
 
 <br><br>
 
-<a href="books.html">Back to Books</a>
-
-        <br>
-        <footer >
-        <hr>
+<a href="books.html">Back</a>
+</div>
+     <br>
+    <footer >
+    <hr>
         <p>© 2026 Book Corner </p>
     </footer>
 
-</body>
-</html>
-
-<a href="books.html">Back to Books</a>
+<script src="js/script.js"></script>
 
 </body>
 </html>

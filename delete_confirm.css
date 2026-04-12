@@ -2,33 +2,64 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background-color: #CBC3E3;
+
 }
 
-header {
-    background-color: #800080;
-    color: white;
-    padding: 10px;
+header{
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    background:#311358;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 99;
+    
 }
-
-header a {
-    color: white;
-    text-decoration: none;
+.logo{
+   
+    color: aliceblue;
+    user-select: none;
+    font-family:serif;
 }
-
-header a:hover {
+.nav a{
+    color: aliceblue;
+    position: relative;
+    font-size:1.1em;
+    margin-left: 10px;
+    margin-right: 70px;
+    text-decoration:none;
+}
+.nav a:hover{
     text-decoration: underline;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2ebfb;
+    
 }
 
 section {
     background-color: #fff;
     padding: 30px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     max-width: 500px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
@@ -78,7 +109,7 @@ button {
 }
 
 .confirm-btn {
-    background-color: #800080;
+    background-color: #663399;
     color: white;
 }
 
@@ -92,11 +123,22 @@ button {
 }
 
 .cancel-btn:hover {
-    background-color: #ccc;
+    background-color:hsl(350, 58%, 40% );
 }
 
 footer {
+    color:black;
+    padding: 20px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     text-align: center;
-    margin-top: 30px;
-    color: #888;
+    font-size: small;
 }
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
