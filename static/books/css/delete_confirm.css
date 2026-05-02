@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #CBC3E3;
+
+}
+
+header{
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    background:#311358;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 99;
+    
+}
+.logo{
+   
+    color: aliceblue;
+    user-select: none;
+    font-family:serif;
+}
+.nav a{
+    color: aliceblue;
+    position: relative;
+    font-size:1.1em;
+    margin-left: 10px;
+    margin-right: 70px;
+    text-decoration:none;
+}
+.nav a:hover{
+    text-decoration: underline;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2ebfb;
+    
+}
+
+section {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #800080;
+    margin-top: 0;
+}
+
+p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.book-details {
+    background-color: #f9f5ff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #800080;
+    text-align: left;
+}
+
+.book-details p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.book-details strong {
+    color: #800080;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-btn {
+    background-color: #663399;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background-color: #660066;
+}
+
+.cancel-btn {
+    background-color: #ddd;
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background-color:hsl(350, 58%, 40% );
+}
+
+footer {
+    color:black;
+    padding: 20px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: small;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
