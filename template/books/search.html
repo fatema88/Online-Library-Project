@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta charset="UTF-8">
+<title>Search Books</title>
+<link rel="stylesheet" href="search.css">
+<script src="search.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="logo">Book Corner</h1>
+        <nav class="nav">
+            <a href="home.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="search.html">Search</a>
+            <a href="borrowed_books.html">Borrowed Books</a>
+            <a href="login.html">Logout</a>
+        </nav>
+
+    </header>
+
+<section>
+
+<h2>Search for a Book</h2>
+
+<form id="searchForm" action="search.html" method="get">
+    <label>Search by Title:</label>
+    <input type="text" name="title">
+
+    <br><br>
+
+    <label>Search by Author:</label>
+    <input type="text" name="author">
+
+    <br><br>
+
+    <label>Search by Category:</label>
+    <select name="category">
+        <option>Choose Category</option>
+        <option>History</option>
+        <option>Science</option>
+        <option>Self-Help</option>
+        <option>Philosophy</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Search</button>
+</form>
+
+<div id="searchResultContainer"></div> 
+</section>
+</section>
+
+
+
+     <br>
+    <footer >
+    <hr>
+        <p>© 2026 Book Corner </p>
+    </footer>
+
+</body>
+</html>
