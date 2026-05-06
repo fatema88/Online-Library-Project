@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Borrowed Books</title>
+<link rel="stylesheet" href="{% static 'books/css/borrowed_books.css' %}">
+</head>
+
+<body>
+
+<header>
+    <h1 class="logo">Book Corner</h1>
+
+    <nav class="nav">
+        
+        <a href="/">Home</a>
+        <a href="/books/">Books</a>
+        <a href="/search/">Search</a>
+        <a href="{% url 'borrowed_books' %}">Borrowed Books</a>
+        <a href="/logout/">Logout</a>
+    </nav>
+</header>
+
+<section>
+
+<h2>My Borrowed Books</h2>
+
+<div class="books-container">
+
+    {% for borrow in borrows %}
+        <div class="book-card">
+            <!-- تأكدي أن موديل Borrow يحتوي على علاقة اسمُها book -->
+            <h3>{{ borrow.book.title }}</h3>
+            <p><strong>Author:</strong> {{ borrow.book.author }}</p>
+            <p><strong>Category:</strong> {{ borrow.book.category }}</p>
+            <p><strong>Date:</strong> {{ borrow.borrow_date }}</p>
+        </div>
+
+    {% empty %}
+        <p style="color:red; font-weight:bold;">
+            You haven't borrowed any books yet 📚
+        </p>
+    {% endfor %}
+
+</div>
+
+</section>
+
+<footer>
+    <hr>
+    <p>© 2026 Book Corner</p>
+</footer>
+
+</body>
+</html>
