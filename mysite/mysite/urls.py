@@ -17,13 +17,16 @@ Including another URLconf
 from django import views
 from django.contrib import admin
 from django.urls import path
-from mysite.pages.views import search, borrowed_books
+from mysite.pages.views import delete_book, delete_confirm, manage_books, search, borrowed_books
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', search, name='search'),
     path('borrowed-books/', borrowed_books, name='borrowed_books'),
+    path('manage-books/', manage_books, name='manage_books'),
+    path('delete-book/<int:book_id>/', delete_confirm, name='delete_confirm'),
+    path('delete-book/<int:book_id>/confirm/', delete_book, name='delete_book'),
     # press at search button, it will call search function in views.py and apply search logic, then render search.html with search results
     
     

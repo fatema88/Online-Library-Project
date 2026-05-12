@@ -1,21 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Books</title>
-    <link rel="stylesheet" href="manage_books.css">
-    <script src="manage_books.js"></script>
+    <link rel="stylesheet" href="{% static 'books/css/manage_books.css' %}">
+    <script src="{% static 'books/js/manage_books.js' %}"></script>
 </head>
 <body>
     
     <header>
         <h1 class="logo">Book Corner</h1>
         <nav class="nav">
-            <a href="home.html">Home</a>
-            <a href="add_edit_book.html">Add Book</a>
-            <a href="manage_books.html">Manage books</a>
-            <a href="login.html">Logout</a>
+            <a href="{% url 'manage_books' %}">Home</a>
+            <a href="#">Add Book</a>
+            <a href="{% url 'manage_books' %}">Manage books</a>
+            <a href="#">Logout</a>
         </nav>
 
     </header>
@@ -23,14 +24,16 @@
     <section>
         <h2>Manage Books</h2>
 
-        <div id="filterContainer">
-            <label>Filter by Name:</label>
-            <input type="text" id="filterName" placeholder="Search book name...">
+        <form method="GET" id="filterForm">
+            <label>Filter by Title:</label>
+            <input type="text" name="title" placeholder="Search book name..." value="{{ title_filter }}">
             <label>Filter by Author:</label>
-            <input type="text" id="filterAuthor" placeholder="Search author...">
+            <input type="text" name="author" placeholder="Search author..." value="{{ author_filter }}">
             <label>Filter by Category:</label>
-            <input type="text" id="filterCategory" placeholder="Search category...">
-        </div>
+            <input type="text" name="category" placeholder="Search category..." value="{{ category_filter }}">
+            <button type="submit">Search</button>
+            <a href="{% url 'manage_books' %}">Clear Filters</a>
+        </form>
 
         <table border="3" cellpadding="5" id="booksTable">
         <caption><b>Library Books List</b></caption>
@@ -45,6 +48,20 @@
             </thead>
 
             <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>
+                        <a href="#">Edit</a> | 
+                        <a href="{% url 'delete_confirm' book.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="5" style="text-align:center;">No books found</td></tr>
+                {% endfor %}
             </tbody>
         </table>
     </section>
