@@ -1,13 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Corner - Add Book</title>
-    <link rel="stylesheet" href="css/add_edit_book.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong"> -->
+    <title>{% if book %}Edit Book{% else %}Add Book{% endif %}</title>
 
+    <link rel="stylesheet" href="{% static 'books/css/add_edit_book.css' %}">
 </head>
 
 <body>
@@ -17,54 +17,56 @@
             <h1> Book Corner </h1>
         </div>
         <ul class="navLinks">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="add_edit_book.html" class="active">Add Book</a></li>
-            <li><a href="manage_books.html">Manage Books</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'add_book' %}" class="active">Add Book</a></li>
+            <li><a href="{% url 'manage_books' %}">Manage Books</a></li>
             <li><a href="login.html" class="logout">Logout</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="header">
-            <h2 class="Title">Add Book</h2>
+            <h2 class="Title">{% if book %} Edit Book {% else %} Add Book {% endif %}</h2>
         </div>
         <div class="content">
             <div class="form-card">
-                <form action="" method="post">
+                <form method="post">
+                    {% csrf_token %}
                     <div class="form-cards">
 
                         <div class="field">
                             <label for="bookName">Book Name:</label>
-                            <input type="text" id="bookName" name="bookName" required>
+                            <input type="text" id="bookName" name="bookName" value="{{ book.title|default:'' }}" required>
                         </div>
 
                         <div class="field">
                             <label for="author">Author:</label>
-                            <input type="text" id="author" name="author" required>
+                            <input type="text" id="author" name="author" value="{{ book.author|default:'' }}" required>
                         </div>
 
                         <div class="field">
                             <label for="category">Category: </label>
                             <div class="C-select"></div>
                             <select id="category" name="category">
-                                <option value="">Select a category</option>
-                                <option>Fiction</option>
-                                <option>History</option>
-                                <option>Science</option>
-                                <option>Technology</option>
-                                <option>Self-Help</option>
+                                <option value="">Select</option>
+
+                                <option value="Fiction" {% if book.category == "Fiction" %}selected{% endif %}>Fiction</option>
+                                <option value="History" {% if book.category == "History" %}selected{% endif %}>History</option>
+                                <option value="Science" {% if book.category == "Science" %}selected{% endif %}>Science</option>
+                                <option value="Technology" {% if book.category == "Technology" %}selected{% endif %}>Technology</option>
+                                <option value="Self-Help" {% if book.category == "Self-Help" %}selected{% endif %}>Self-Help</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="field">
+                    <!-- <div class="field">
                         <label for="bookID">Book ID:</label>
                         <input type="number" id="bookID" name="bookId" required>
-                    </div>
+                    </div> -->
 
                     <div class="field full">
                         <label for="description">Description:</label>
-                        <textarea id="description" name="description" rows="6" cols="40"></textarea>
+                        <textarea id="description" name="description" rows="6" cols="40">{{ book.description|default:'' }}</textarea>
                     </div>
                     <div class="actions">
                         <button class="btn-save" type="submit">Save Book</button>
@@ -73,14 +75,14 @@
                 </form>
             </div>
             <div class="image">
-                <img src="book1.png">
+                <img src="{% static 'books/images/book1.png' %}">
             </div>
         </div>
     </main>
     <footer>
         <p>© 2026 Book Corner </p>
     </footer>
-    <script src="js/add_edit_book.js"></script>
+    <script src="{% static 'books/js/add_edit_book.js' %}"></script>
 </body>
 
 </html>
