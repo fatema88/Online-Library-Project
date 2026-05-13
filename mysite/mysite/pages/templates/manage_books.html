@@ -14,7 +14,7 @@
         <h1 class="logo">Book Corner</h1>
         <nav class="nav">
             <a href="{% url 'manage_books' %}">Home</a>
-            <a href="#">Add Book</a>
+            <a href="{% url 'add_book' %}">Add Book</a>
             <a href="{% url 'manage_books' %}">Manage books</a>
             <a href="#">Logout</a>
         </nav>
@@ -55,7 +55,7 @@
                     <td>{{ book.author }}</td>
                     <td>{{ book.category }}</td>
                     <td>
-                        <a href="#">Edit</a> | 
+                        <a href="{% url 'edit_book' book.id %}">Edit</a> | 
                         <a href="{% url 'delete_confirm' book.id %}">Delete</a>
                     </td>
                 </tr>
