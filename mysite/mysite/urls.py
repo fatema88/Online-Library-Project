@@ -18,15 +18,23 @@ from django import views
 from django.contrib import admin
 from django.urls import path
 from mysite.pages.views import delete_book, delete_confirm, manage_books, search, borrowed_books
-
+from mysite.pages import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', views.home, name='home'),
+    
     path('search/', search, name='search'),
     path('borrowed-books/', borrowed_books, name='borrowed_books'),
+    
     path('manage-books/', manage_books, name='manage_books'),
     path('delete-book/<int:book_id>/', delete_confirm, name='delete_confirm'),
     path('delete-book/<int:book_id>/confirm/', delete_book, name='delete_book'),
+
+    path('add-book/', views.add_book, name='add_book'),
+    path('edit-book/<int:id>/', views.edit_book, name='edit_book'),
+
     # press at search button, it will call search function in views.py and apply search logic, then render search.html with search results
     
     
