@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Books</title>
+    <link rel="stylesheet" href="{% static 'books/css/search.css' %}">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">Book Corner</h1>
+    <nav class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="/books/">Books</a>
+        <a href="{% url 'search' %}">Search</a>
+        <a href="{% url 'borrowed_books' %}">Borrowed Books</a>
+        <a href="{% url 'login' %}">Logout</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Search for a Book</h2>
+
+    <form method="GET" action="{% url 'search' %}">
+        <label>Search by Title or Author:</label>
+        <input type="text" name="q" placeholder="Enter book title or author..." value="{{ query|default:'' }}">
+        <br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="resultsContainer" class="books-container">
+
+        {% if query %}
+            <h3>Results for: "{{ query }}"</h3>
+
+            {% for book in results %}
+                <div class="book-card">
+                    <h3>{{ book.title }}</h3>
+                    <p><strong>Author:</strong> {{ book.author }}</p>
+                    <p><strong>Category:</strong> {{ book.category }}</p>
+
+                    <a href="#" class="details-btn">View Details</a>
+                </div>
+
+            {% empty %}
+                <p class="no-results">
+                    Unfortunately, no books found matching your search.
+                </p>
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+</section>
+
+<footer>
+    <hr>
+    <p>© 2026 Book Corner</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f2ebfb;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* العنوان */
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    background:#311358;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 99;
+}
+.logo{
+    color: aliceblue;
+    user-select: none;
+    font-family:serif;
+}
+.nav a{
+    color: aliceblue;
+    position: relative;
+    font-size:1.1em;
+    margin-right: 70px;
+    text-decoration:none;
+    transition: 0.3s;
+}
+.nav a:hover{
+    text-decoration: underline;
+}
+.books{
+    margin-top: 120px;
+}
+.book{
+    margin-top: 100px;
+}
+
+/* الجدول */
+table {
+    margin: 40px auto;
+    background-color: white;
+    width: 70%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* رأس الجدول */
+th {
+    background-color: #663399;
+    color: white;
+}
+
+/* الخلايا */
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+tr:hover{
+    background-color: #eee;
+}
+
+/* الروابط */
+a {
+    margin: 5px;
+    color: #663399;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* الزر */
+button {
+    background-color: #663399;
+    color: white;
+    padding: 5px;
+    border: none;
+    width: 20%;
+    height: 40px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+button:hover{
+    background-color:#660066 ;
+}
+.book a{
+    color: #5559;
+}
