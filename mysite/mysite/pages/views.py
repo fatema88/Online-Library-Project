@@ -16,6 +16,38 @@ def borrowed_books(request):
     borrows =Borrow.objects.filter(user=request.user)
     return render (request,'borrowed_books.html',{'borrows':borrows})
 
+#home just for now
+def home(request):
+    return render(request, 'home.html')
+
+
+def add_book(request):
+    if request.method == "POST":
+        Book.objects.create(
+            title = request.POST['bookName'],
+            author = request.POST['author'],
+            category = request.POST['category'],
+            description = request.POST['description']
+        )
+        return redirect('manage_books')
+
+    return render(request, 'add_edit_book.html')
+
+
+def edit_book(request, id):
+    book = get_object_or_404(Book, id=id)
+
+    if request.method == "POST":
+        book.title = request.POST['bookName']
+        book.author = request.POST['author']
+        book.category = request.POST['category']
+        book.description = request.POST['description']
+        book.save()
+
+        return redirect('manage_books')
+
+    return render(request, 'add_edit_book.html', {'book': book})
+
 
 
 def manage_books(request):
