@@ -86,7 +86,11 @@ header{
     flex: 1;
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
+    align-items: center;;
+=======
     align-items: center;
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 }
 
 /* Card */
@@ -96,11 +100,22 @@ header{
     border-radius: 16px;
     width: 350px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+<<<<<<< HEAD
+    width: 600px;
+    height: 700px;
+    margin-top: 90px;
+=======
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 }
 
 .form-card h2 {
     margin-bottom: 20px;
+<<<<<<< HEAD
+    color:#663399;
+    
+=======
     color: #5b21b6;
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 }
 
 /* Inputs */

@@ -53,13 +53,21 @@ body{
 .login{
     margin-top: 50px;
     position: relative;
+<<<<<<< HEAD
+    width: 430px;
+=======
     width: 400px;
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
     height: 400px;
     background:white;
     border: 1px solid #311358;
     border-radius: 20px;
     backdrop-filter: blur(15px);
+<<<<<<< HEAD
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+=======
     box-shadow: 0 0 30px rgba(0, 0, 0, -5);
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,12 +79,23 @@ body{
     padding:30px ;
 }
 
+<<<<<<< HEAD
+.form-box h3{
+    font-size: 2em;
+    color:darkgray;
+    text-align: center;
+    margin-top: 0;
+   margin-bottom: 30px;
+   font-weight: 600;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+=======
 .form-box h2{
     font-size: 2.5em;
     color:black;
     text-align: center;
    margin-bottom: 30px;
    font-weight: 700;
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 }
 
 .input-box{
@@ -114,7 +133,11 @@ body{
     font-size: .9em;
     /* color: #461B7E; */
     font-weight: 500;
+<<<<<<< HEAD
+    margin: -15px -60px 15px ;
+=======
     margin: -15px -40px 15px ;
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
     display: flex;
     justify-content: space-around;
     
@@ -137,6 +160,10 @@ body{
     color: aliceblue;
     font-weight: 600;
     margin-bottom: 20px;
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 }
 .btn:hover{
     background-color:#311358;
@@ -159,4 +186,7 @@ footer {
     margin-bottom: 10px;
     font-size: 0.9em;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0

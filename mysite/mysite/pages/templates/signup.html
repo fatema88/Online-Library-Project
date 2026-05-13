@@ -4,6 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+<<<<<<< HEAD
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'books/css/homesignup.css' %}">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">Book Corner</h1>
+    <nav class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'signup' %}">Sign up</a>
+        <a href="{% url 'login' %}">Log in</a>
+    </nav>
+</header>
+
+<section class="form-section">
+    <div class="form-card">
+
+        <h2>Create Account</h2>
+
+        <form id="signupForm" method="POST">
+            {% csrf_token %}
+
+            <label>Username *</label>
+            <input type="text" name="username" required>
+
+            <label>Email *</label>
+            <input type="email" name="email" required>
+
+            <label>Password *</label>
+            <input type="password" name="password" required>
+
+            <label>Confirm Password *</label>
+            <input type="password" name="confirm_password" required>
+
+            <div class="radio-group">
+                <p>Account Type</p>
+                <label>
+                    <input type="radio" name="role" value="user" checked>
+                    User
+                </label>
+                <label>
+                    <input type="radio" name="role" value="admin">
+                    Admin
+                </label>
+            </div>
+
+            <button type="submit">Sign Up</button>
+
+        </form>
+
+        <p class="login-link">
+            Already have an account?
+            <a href="{% url 'login' %}">Log in</a>
+        </p>
+
+=======
     <link rel="stylesheet" href="homesignup.css">
 </head>
 <body>
@@ -47,6 +106,7 @@
         <p class="login-link">
             Already have an account? <a href="#">Log in</a>
         </p>
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
     </div>
 </section>
 
@@ -54,7 +114,11 @@
     <p>© 2026 Book Corner</p>
 </footer>
 
+<<<<<<< HEAD
+<script src="{% static 'books/js/signup.js' %}"></script>
+=======
 <script src="signup.js"></script>
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 
 </body>
 </html>

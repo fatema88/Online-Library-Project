@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Corner</title>
+<<<<<<< HEAD
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'books/css/homesignup.css' %}">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">Book Corner</h1>
+    <nav class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'signup' %}">Sign up</a>
+        <a href="{% url 'login' %}">Log in</a>
+    </nav>
+</header>
+=======
     <link rel="stylesheet" href="homesignup.css">
 </head>
 <body>
@@ -17,14 +34,22 @@
         </nav>
 
     </header>
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 
 <section class="hero">
     <div class="hero-content">
         <h2>Your Digital Library</h2>
         <p>
+<<<<<<< HEAD
+            Explore thousands of books, borrow instantly,
+            and manage your collection — all in one place.
+        </p>
+        <a href="{% url 'signup' %}" class="btn">Get Started</a>
+=======
             Explore thousands of books, borrow instantly, and manage your collection — all in one place.
         </p>
         <a href="signup.html" class="btn">Get Started</a>
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
     </div>
 </section>
 

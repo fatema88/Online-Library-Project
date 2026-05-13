@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- page title -->
+<title>{{ book.name }}</title>
+
+{% load static %}
+
+<!-- css file -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1 class="logo">Book Corner</h1>
+
+    <nav class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'books' %}">Books</a>
+        <a href="{% url 'search' %}">Search</a>
+        <a href="{% url 'borrowed_books' %}">Borrowed Books</a>
+        <a href="{% url 'login' %}">Logout</a>
+    </nav>
+
+</header>
+
+<div class="book">
+
+<h2>Book Details</h2>
+
+<!-- book information -->
+<p><b>Book Name:</b> {{ book.name }}</p>
+
+<p><b>Author:</b> {{ book.author }}</p>
+
+<p><b>Category:</b> {{ book.category }}</p>
+
+<p><b>Description:</b> {{ book.description }}</p>
+
+<!-- availability -->
+<p>
+<b>Status:</b>
+
+{% if book.available %}
+Available
+{% else %}
+Not Available
+{% endif %}
+</p>
+
+<!-- borrow button -->
+{% if book.available %}
+
+<form method="POST">
+
+{% csrf_token %}
+
+<button type="submit">
+Borrow Book
+</button>
+
+</form>
+
+{% else %}
+
+<button disabled>
+Borrow Book
+</button>
+
+{% endif %}
+
+<br><br>
+
+<!-- back button -->
+<a href="{% url 'books' %}">Back</a>
+
+</div>
+
+<br>
+
+<footer>
+<hr>
+<p>© 2026 Book Corner</p>
+</footer>
+
+<!-- js file -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

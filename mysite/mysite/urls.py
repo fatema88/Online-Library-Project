@@ -24,10 +24,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.home, name='home'),
+<<<<<<< HEAD
+
+    path('login/', views.login_view, name='login'),
+    path('signup/', views.signup, name='signup'),
+
+    path('search/', search, name='search'),
+    path('borrowed-books/', borrowed_books, name='borrowed_books'),
+
+=======
     
     path('search/', search, name='search'),
     path('borrowed-books/', borrowed_books, name='borrowed_books'),
     
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
     path('manage-books/', manage_books, name='manage_books'),
     path('delete-book/<int:book_id>/', delete_confirm, name='delete_confirm'),
     path('delete-book/<int:book_id>/confirm/', delete_book, name='delete_book'),

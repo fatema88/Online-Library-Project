@@ -4,11 +4,38 @@
 <meta charset="UTF-8">
 <title>Books</title>
 
+<<<<<<< HEAD
+{% load static %}
+
+<!-- css file -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+=======
 <link rel="stylesheet" href="css/style.css">
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 </head>
 
 <body>
 
+<<<<<<< HEAD
+<header>
+    <h1 class="logo">Book Corner</h1>
+
+    <nav class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'books' %}">Books</a>
+        <a href="{% url 'search' %}">Search</a>
+        <a href="{% url 'borrowed_books' %}">Borrowed Books</a>
+        <a href="{% url 'login' %}">Logout</a>
+    </nav>
+</header>
+
+<div class="books">
+
+<h2>Books List</h2>
+
+<table>
+=======
     <header>
         <h1 class="logo">Book Corner</h1>
         <nav class="nav">
@@ -24,6 +51,7 @@
     <h2>Books List</h2>
 
 <table border="1">
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 
 <tr>
 <th>Book Name</th>
@@ -32,6 +60,50 @@
 <th>Details</th>
 </tr>
 
+<<<<<<< HEAD
+<!-- loop through all books -->
+{% for book in books %}
+
+<tr>
+
+<!-- display book name -->
+<td>{{ book.name }}</td>
+
+<!-- display author -->
+<td>{{ book.author }}</td>
+
+<!-- check availability -->
+<td>
+{% if book.available %}
+Available
+{% else %}
+Not Available
+{% endif %}
+</td>
+
+<!-- details page -->
+<td>
+<a href="{% url 'book_details' book.id %}">Details</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<br>
+
+<footer>
+<hr>
+<p>© 2026 Book Corner</p>
+</footer>
+
+<!-- js file -->
+<script src="{% static 'js/script.js' %}"></script>
+=======
 <tr>
 <td>Clean Code</td>
 <td>Robert Martin</td>
@@ -61,6 +133,7 @@
     </footer>
 
 <script src="js/script.js"></script>
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 
 </body>
 </html>
