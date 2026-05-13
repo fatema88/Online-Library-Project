@@ -4,15 +4,20 @@
 <meta charset="UTF-8">
 <title>Books</title>
 
+<<<<<<< HEAD
 {% load static %}
 
 <!-- css file -->
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+=======
+<link rel="stylesheet" href="css/style.css">
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 </head>
 
 <body>
 
+<<<<<<< HEAD
 <header>
     <h1 class="logo">Book Corner</h1>
 
@@ -30,6 +35,23 @@
 <h2>Books List</h2>
 
 <table>
+=======
+    <header>
+        <h1 class="logo">Book Corner</h1>
+        <nav class="nav">
+            <a href="home.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="search.html">Search</a>
+            <a href="borrowed_books.html">Borrowed Books</a>
+            <a href="login.html">Logout</a>
+        </nav>
+
+    </header>
+<div class="books">
+    <h2>Books List</h2>
+
+<table border="1">
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 
 <tr>
 <th>Book Name</th>
@@ -38,6 +60,7 @@
 <th>Details</th>
 </tr>
 
+<<<<<<< HEAD
 <!-- loop through all books -->
 {% for book in books %}
 
@@ -80,6 +103,37 @@ Not Available
 
 <!-- js file -->
 <script src="{% static 'js/script.js' %}"></script>
+=======
+<tr>
+<td>Clean Code</td>
+<td>Robert Martin</td>
+<td>Available</td>
+<td><a href="clean_code.html">Details</a></td>
+</tr>
+
+<tr>
+<td>Algorithms</td>
+<td>Thomas Cormen</td>
+<td>Available</td>
+<td><a href="algorithms.html">Details</a></td>
+</tr>
+
+<tr>
+<td>Artificial  Intelligence</td>
+<td>Stuart Russell</td>
+<td>Not Available</td>
+<td><a href="artificial_intelligence.html">Details</a></td>
+</tr>
+
+</table></div>
+     <br>
+    <footer >
+    <hr>
+        <p>© 2026 Book Corner </p>
+    </footer>
+
+<script src="js/script.js"></script>
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 
 </body>
 </html>

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 {% load static %}
+=======
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +10,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="{% static 'books/css/login.css' %}">
+=======
+    <link rel="stylesheet" href="login.css">
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 </head>
 
 <body>
 
+<<<<<<< HEAD
     <header>
         <h1 class="logo">Book Corner</h1>
         <nav class="nav">
@@ -73,3 +81,72 @@
 
 
 
+=======
+
+    <header>
+        <h1 class="logo">Book Corner</h1>
+        <nav class="nav">
+            <a href="home.html">Home</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Log In</a>
+        </nav>
+
+    </header>
+
+
+<div class="login">
+    <div class="form-box">
+        <h2>Login</h2>
+        <form action="books.html"
+        id="loginForm">
+            <div class="input-box">
+            <label for="name">Email</label>
+            <input type ="Email" id="email" name ="email" placeholder="enter your email"required >
+        </div>
+
+
+        <div class="input-box">
+            <label for ="pass">password</label>
+            <input type="password" id="pass" name ="pass" minlength="7" maxlength="10"" placeholder="enter your password" required>
+        </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember me</label>
+            <a href="signup.html">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <div class="account">
+            <p>Don't have an account?<a href="signup.html" class="link">Sign up</a></p>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Book Corner. All rights reserved.</p>
+    </div>
+</footer>
+        
+
+
+
+    ,<script>
+const loginForm = document.getElementById("loginForm");
+        
+        loginForm.addEventListener("submit", function(e) {
+            e.preventDefault();  
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("pass").value; 
+            if(email && password) {
+                alert("Welcome back!");
+                window.location.href = "home.html"; 
+            }
+        });
+    </script>
+</body>
+</html>
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0

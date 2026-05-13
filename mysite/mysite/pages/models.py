@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+<<<<<<< HEAD
 
 class User(models.Model):
 
@@ -26,6 +27,8 @@ class User(models.Model):
 
 
 
+=======
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
 class Book(models.Model):
      title = models.CharField(max_length=200)
      author = models.CharField(max_length=100) 
@@ -42,4 +45,8 @@ class Borrow(models.Model):
           return f"{self.user.username}borrowed{self.book.title}"       
           
 
+<<<<<<< HEAD
     
+=======
+    
+>>>>>>> 7dd52382b5b95f3c3e9721929432ee238dce10f0
