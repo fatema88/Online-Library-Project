@@ -1,10 +1,10 @@
-{% load static %} <!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Books List</title>
-   {% load static %}
-<link rel="stylesheet" href="{% static 'books/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'books/css/style.css' %}">
 </head>
 
 <body>
@@ -20,7 +20,12 @@
     </nav>
 </header>
 
-<div class="books"> <h2>Books List</h2>
+<div class="books">
+    <h2>Books List</h2>
+
+    <!-- رسالة النجاح أو الخطأ -->
+    <div id="message" style="display:none; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-weight: bold;"></div>
+
     <table>
         <thead>
             <tr>
@@ -37,7 +42,13 @@
                 <td>{{ book.author }}</td>
                 <td>{{ book.category }}</td>
                 <td>
-                    <a href="{% url 'borrow_book' book.id %}" style="color: green; font-weight: bold;">Borrow Now</a>
+                    <button 
+                        class="borrow-btn" 
+                        data-book-id="{{ book.id }}"
+                        data-book-title="{{ book.title }}"
+                    >
+                        Borrow Now
+                    </button>
                 </td>
             </tr>
             {% empty %}
@@ -53,6 +64,54 @@
     <hr>
     <p>© 2026 Book Corner</p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const messageBox = document.getElementById("message");
+
+    function showMessage(text, isSuccess) {
+        messageBox.textContent = text;
+        messageBox.style.display = "block";
+        messageBox.style.backgroundColor = isSuccess ? "#d4edda" : "#f8d7da";
+        messageBox.style.color = isSuccess ? "#155724" : "#721c24";
+
+        setTimeout(() => {
+            messageBox.style.display = "none";
+        }, 3000);
+    }
+
+    document.querySelectorAll(".borrow-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const bookId = btn.dataset.bookId;
+            const bookTitle = btn.dataset.bookTitle;
+
+            fetch(`/borrow/${bookId}/`, {
+                method: "GET",
+                headers: {
+                    "x-requested-with": "XMLHttpRequest"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "ok") {
+                    showMessage(`✅ You borrowed "${bookTitle}" successfully!`, true);
+                    btn.disabled = true;
+                    btn.textContent = "Borrowed ✓";
+                    btn.style.backgroundColor = "#aaa";
+                } else if (data.status === "already") {
+                    showMessage(`⚠️ You already borrowed "${bookTitle}"!`, false);
+                } else {
+                    showMessage("Something went wrong, please try again.", false);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                showMessage("Connection error, please try again.", false);
+            });
+        });
+    });
+});
+</script>
 
 </body>
 </html>

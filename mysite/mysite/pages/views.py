@@ -1,9 +1,7 @@
-
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, login as auth_login
 from mysite.pages.models import Book
 from mysite.pages.models import Borrow
 from django.shortcuts import render, get_object_or_404, redirect
@@ -61,22 +59,24 @@ def login_view(request):
 
 def search(request):
     query = request.GET.get('q', '')
- 
-    
+
     if request.headers.get('x-requested-with') == 'XMLHttpRequest' or query:
         books = Book.objects.filter(title__icontains=query)
         results = list(books.values('title', 'author', 'category'))
         return JsonResponse({"results": results})
+
     return render(request, 'search.html')
 
+
 def borrowed_books(request):
-    user_id = request.session.get('user_id') 
+    user_id = request.session.get('user_id')
     if not user_id:
         return redirect('login')
-    
+
     current_user = get_object_or_404(User, id=user_id)
     borrows = Borrow.objects.filter(user=current_user)
     return render(request, 'borrowed_books.html', {'borrows': borrows})
+
 
 def add_book(request):
     if request.method == "POST":
@@ -136,28 +136,41 @@ def delete_book(request, book_id):
     book = get_object_or_404(Book, id=book_id)
     book.delete()
     return redirect('manage_books')
-# ضيف دي في ملف views.py
+
+
 def borrow_book(request, book_id):
     user_id = request.session.get('user_id')
     if not user_id:
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({"status": "error", "message": "Not logged in"}, status=401)
         return redirect('login')
-    
+
     current_user = get_object_or_404(User, id=user_id)
     book = get_object_or_404(Book, id=book_id)
-    
-    # بنسجل عملية الاستعارة في الداتابيز
-    Borrow.objects.get_or_create(user=current_user, book=book)
-    
-    messages.success(request, f"You borrowed {book.title} successfully!")
-    return redirect('borrowed_books')    
+
+    borrow, created = Borrow.objects.get_or_create(user=current_user, book=book)
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        if created:
+            return JsonResponse({"status": "ok"})
+        else:
+            return JsonResponse({"status": "already"})
+
+    if created:
+        messages.success(request, f"You borrowed {book.title} successfully!")
+    else:
+        messages.warning(request, f"You already borrowed {book.title}!")
+    return redirect('borrowed_books')
+
+
 def books_list(request):
-    
-    all_books = Book.objects.all() 
+    all_books = Book.objects.all()
     return render(request, 'books.html', {'books': all_books})
+
+
 def return_book(request, borrow_id):
-    
     borrow_record = get_object_or_404(Borrow, id=borrow_id)
     borrow_record.delete()
-    
+
     messages.success(request, "Book returned successfully!")
     return redirect('borrowed_books')
