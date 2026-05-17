@@ -1,66 +1,58 @@
-<!DOCTYPE html>
+{% load static %} <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Books</title>
-
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Books List</title>
+   {% load static %}
+<link rel="stylesheet" href="{% static 'books/css/style.css' %}">
 </head>
 
 <body>
 
-    <header>
-        <h1 class="logo">Book Corner</h1>
-        <nav class="nav">
-            <a href="home.html">Home</a>
-            <a href="books.html">Books</a>
-            <a href="search.html">Search</a>
-            <a href="borrowed_books.html">Borrowed Books</a>
-            <a href="login.html">Logout</a>
-        </nav>
+<header>
+    <h1 class="logo">Book Corner</h1>
+    <nav class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'books' %}">Books</a>
+        <a href="{% url 'search' %}">Search</a>
+        <a href="{% url 'borrowed_books' %}">Borrowed Books</a>
+        <a href="{% url 'login' %}">Logout</a>
+    </nav>
+</header>
 
-    </header>
-<div class="books">
-    <h2>Books List</h2>
+<div class="books"> <h2>Books List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.category }}</td>
+                <td>
+                    <a href="{% url 'borrow_book' book.id %}" style="color: green; font-weight: bold;">Borrow Now</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" style="text-align:center;">No books available right now.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
-<table border="1">
-
-<tr>
-<th>Book Name</th>
-<th>Author</th>
-<th>Status</th>
-<th>Details</th>
-</tr>
-
-<tr>
-<td>Clean Code</td>
-<td>Robert Martin</td>
-<td>Available</td>
-<td><a href="clean_code.html">Details</a></td>
-</tr>
-
-<tr>
-<td>Algorithms</td>
-<td>Thomas Cormen</td>
-<td>Available</td>
-<td><a href="algorithms.html">Details</a></td>
-</tr>
-
-<tr>
-<td>Artificial  Intelligence</td>
-<td>Stuart Russell</td>
-<td>Not Available</td>
-<td><a href="artificial_intelligence.html">Details</a></td>
-</tr>
-
-</table></div>
-     <br>
-    <footer >
+<footer>
     <hr>
-        <p>© 2026 Book Corner </p>
-    </footer>
-
-<script src="js/script.js"></script>
+    <p>© 2026 Book Corner</p>
+</footer>
 
 </body>
 </html>

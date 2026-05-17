@@ -6,37 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Books</title>
     <link rel="stylesheet" href="{% static 'books/css/manage_books.css' %}">
-    <script src="{% static 'books/js/manage_books.js' %}"></script>
+    <script src="{% static 'js/manage_books.js' %}"></script>
 </head>
 <body>
     
     <header>
         <h1 class="logo">Book Corner</h1>
         <nav class="nav">
-            <a href="{% url 'manage_books' %}">Home</a>
+            <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'add_book' %}">Add Book</a>
             <a href="{% url 'manage_books' %}">Manage books</a>
-            <a href="#">Logout</a>
+            <a href="{% url 'login' %}">Logout</a>
         </nav>
-
     </header>
 
     <section>
         <h2>Manage Books</h2>
 
-        <form method="GET" id="filterForm">
-            <label>Filter by Title:</label>
-            <input type="text" name="title" placeholder="Search book name..." value="{{ title_filter }}">
-            <label>Filter by Author:</label>
-            <input type="text" name="author" placeholder="Search author..." value="{{ author_filter }}">
-            <label>Filter by Category:</label>
-            <input type="text" name="category" placeholder="Search category..." value="{{ category_filter }}">
-            <button type="submit">Search</button>
-            <a href="{% url 'manage_books' %}">Clear Filters</a>
-        </form>
+        <div id="filterContainer">
+            <form method="GET" id="filterForm">
+                <label>Filter by Title:</label>
+                <input type="text" name="title" placeholder="Search book name..." value="{{ title_filter }}">
+                
+                <label>Filter by Author:</label>
+                <input type="text" name="author" placeholder="Search author..." value="{{ author_filter }}">
+                
+                <label>Filter by Category:</label>
+                <input type="text" name="category" placeholder="Search category..." value="{{ category_filter }}">
+                
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="btn-save" style="width: auto; padding: 10px 20px;">Apply Filters</button>
+                    <a href="{% url 'manage_books' %}" class="btn-clear" style="text-decoration: none; display: inline-block; padding: 10px 20px;">Clear All</a>
+                </div>
+            </form>
+        </div>
 
         <table border="3" cellpadding="5" id="booksTable">
-        <caption><b>Library Books List</b></caption>
+            <caption><b>Library Books List</b></caption>
             <thead>
                 <tr>
                     <th class="sortable">Book ID</th>
@@ -46,7 +52,6 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-
             <tbody>
                 {% for book in books %}
                 <tr>
@@ -56,20 +61,22 @@
                     <td>{{ book.category }}</td>
                     <td>
                         <a href="{% url 'edit_book' book.id %}">Edit</a> | 
-                        <a href="{% url 'delete_confirm' book.id %}">Delete</a>
+                        <a href="{% url 'delete_confirm' book.id %}" style="color: red;">Delete</a>
                     </td>
                 </tr>
                 {% empty %}
-                <tr><td colspan="5" style="text-align:center;">No books found</td></tr>
+                <tr>
+                    <td colspan="5" style="text-align:center;">No books found in the database.</td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
     </section>
 
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Book Corner. All rights reserved.</p>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Book Corner. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
